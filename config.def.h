@@ -68,7 +68,7 @@ static const char *colorname[] = {
 	"#c4c4ff",  /* 13: brmagenta*/
 	"#80bfaf",  /* 14: brcyan   */
 	"#e8e8d3",  /* 15: brwhite  */
-}
+};
 
 /*
  * Default colors (colorname index)

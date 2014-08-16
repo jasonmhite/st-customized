@@ -45,7 +45,6 @@ char *argv0;
  #include <libutil.h>
 #endif
 
-
 /* XEMBED messages */
 #define XEMBED_FOCUS_IN  4
 #define XEMBED_FOCUS_OUT 5
@@ -3915,7 +3914,7 @@ run(void) {
 void
 usage(void) {
 	die("%s " VERSION " (c) 2010-2014 st engineers\n" \
-	"usage: st [-a] [-v] [-c class] [-f font] [-g geometry] [-o file]" \
+	"usage: st [-a] [-v] [-z] [-c class] [-f font] [-g geometry] [-o file]" \
 	" [-t title] [-w windowid] [-e command ...]\n", argv0);
 }
 
@@ -3926,6 +3925,9 @@ main(int argc, char *argv[]) {
 
 	xw.l = xw.t = 0;
 	xw.isfixed = False;
+    
+    int _alpha = alpha;
+    alpha = OPAQUE; /* Disable opacity by default */
 
 	ARGBEGIN {
 	case 'a':
@@ -3963,7 +3965,12 @@ main(int argc, char *argv[]) {
 	case 'w':
 		opt_embed = EARGF(usage());
 		break;
+    case 'z':
+        /* enable opacity */
+        alpha = _alpha;
+        break;
 	case 'v':
+
 	default:
 		usage();
 	} ARGEND;

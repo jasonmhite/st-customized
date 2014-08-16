@@ -4,7 +4,7 @@
 pkgname=st-custom-git
 _pkgname=st-customized
 epoch=1
-pkgver=20140808.7f34754
+pkgver=20140816.e104189
 pkgrel=1
 pkgdesc='Simple virtual terminal emulator for X'
 url='http://git.suckless.org/st/'

@@ -3128,8 +3128,8 @@ xinit(void) {
 
 	parent = opt_embed ? strtol(opt_embed, NULL, 0) : \
 			XRootWindow(xw.dpy, xw.scr);
-	xw.win = XCreateWindow(xw.dpy, parent, xw.fx, xw.fy,
-			xw.w, xw.h, 0, XDefaultDepth(xw.dpy, xw.scr), InputOutput,
+	xw.win = XCreateWindow(xw.dpy, parent, xw.l, xw.t,
+			xw.w, xw.h, 0, xw.depth, InputOutput,
 			xw.vis, CWBackPixel | CWBorderPixel | CWBitGravity
 			| CWEventMask | CWColormap, &xw.attrs);
 
